@@ -23,8 +23,6 @@ bool init_sdl(GameState *gameState) {
         return false;
     }
 
-    gameState->surface = SDL_CreateRGBSurface(0, gameState->screen_width, gameState->screen_height, 32, 0, 0, 0, 0);
-
     return true;
 }
 

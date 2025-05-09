@@ -31,3 +31,7 @@ SDL_Color vec4_to_col(Vec4 vec) {
 
     return col;
 }
+
+__int32_t packed_color(SDL_Color col) {
+    return (col.r << 24) + (col.g << 16) + (col.b << 8) + col.a;
+}

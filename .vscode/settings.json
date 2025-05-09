@@ -2,5 +2,6 @@
     "files.associations": {
         "stack_vec2.h": "c",
         "stdio.h": "c"
-    }
+    },
+    "makefile.configureOnOpen": false
 }

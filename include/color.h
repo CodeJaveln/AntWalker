@@ -10,4 +10,6 @@ Vec4 generate_col(Vec4 seed);
 
 SDL_Color vec4_to_col(Vec4 vec);
 
+__int32_t packed_color(SDL_Color col);
+
 #endif

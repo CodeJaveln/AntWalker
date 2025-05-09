@@ -29,8 +29,3 @@ Vec2 vec2_add_direction(Vec2 vec, Directions dir) {
 
     return retval;
 }
-
-__int128_t vec4_packed(Vec4 vec) {
-    __int128_t retval;
-    retval = (vec.r << )
-}

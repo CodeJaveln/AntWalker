@@ -62,15 +62,6 @@ void tick(GameState *gameState) {
             stack_push(gameState->stack, new_pos);
 
             gameState->color_array[(int)new_pos.x + (int)new_pos.y * gameState->screen_width] = generate_col(gameState->color_array[(int)(cur_pos.x) + (int)(cur_pos.y) * gameState->screen_width]);
-            if (SDL_MUSTLOCK(gameState->surface)) {
-                SDL_LockSurface(gameState->surface);
-            }
-
-            gameState->surface->pixels[(int)new_pos.x + (int)new_pos.y * gameState->screen_width] = ;
-
-            if (SDL_MUSTLOCK(gameState->surface)) {
-                SDL_UnlockSurface(gameState->surface);
-            }
             break;
         }
     }
@@ -83,6 +74,9 @@ void render(GameState *gameState) {
     for (int y = 0; y < gameState->screen_height; y++) {
         for (int x = 0; x < gameState->screen_width; x++) {
             Vec4 vec = gameState->color_array[x + y * gameState->screen_width];
+            if (vec4_is_empty(vec)) {
+                continue;
+            }
             SDL_Color col = vec4_to_col(vec);
             SDL_SetRenderDrawColor(gameState->renderer, col.r, col.g, col.b, col.a);
             SDL_RenderDrawPointF(gameState->renderer, x, y);

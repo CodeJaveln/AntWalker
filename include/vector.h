@@ -16,6 +16,4 @@ bool vec4_is_empty(Vec4 vec);
 
 Vec2 vec2_add_direction(Vec2 vec, Directions dir);
 
-__int128_t vec4_packed(Vec4 vec);
-
 #endif

@@ -44,9 +44,9 @@ int main(void) {
     while (!should_quit()) {
         tick(gameState);
 
-        if (get_stack_ptr(gameState->stack) < 0) {
-            render(gameState);
-        }
+        // if (get_stack_ptr(gameState->stack) < 0) {
+        render(gameState);
+        // }
     }
 
     quit_program(gameState);
