@@ -12,11 +12,11 @@ Vec4 random_col(void) {
     return vec;    
 }
 
-Vec4 generate_col(Vec4 seed) {
+Vec4 generate_col(Vec4 seed, float mod_min, float mod_max) {
     Vec4 vec;
-    vec.r = math_clampf(randf(-0.005f, 0.005f) + seed.r, 0, 1.0f);
-    vec.g = math_clampf(randf(-0.005f, 0.005f) + seed.g, 0, 1.0f);
-    vec.b = math_clampf(randf(-0.005f, 0.005f) + seed.b, 0, 1.0f);
+    vec.r = math_clampf(randf(mod_min, mod_max) + seed.r, 0, 1.0f);
+    vec.g = math_clampf(randf(mod_min, mod_max) + seed.g, 0, 1.0f);
+    vec.b = math_clampf(randf(mod_min, mod_max) + seed.b, 0, 1.0f);
     vec.a = 1.0f;
     
     return vec;
@@ -30,8 +30,4 @@ SDL_Color vec4_to_col(Vec4 vec) {
     col.a = (int)(255.0f * vec.a);
 
     return col;
-}
-
-__int32_t packed_color(SDL_Color col) {
-    return (col.r << 24) + (col.g << 16) + (col.b << 8) + col.a;
 }

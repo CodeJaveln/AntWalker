@@ -5,6 +5,9 @@
 #include "color.h"
 #include "handle_sdl.h"
 
+#define COL_MOD_MIN -0.005f
+#define COL_MOD_MAX 0.005f
+
 bool init_program(GameState *gameState) {
     srand(time(NULL));
 
@@ -24,9 +27,7 @@ bool init_program(GameState *gameState) {
         return false;
     }
 
-    Vec2 pos;
-    pos.x = gameState->screen_width / 2;
-    pos.y = gameState->screen_height / 2;
+    Vec2 pos = { gameState->screen_width / 2, gameState->screen_height / 2 };
     stack_push(gameState->stack, pos);
 
     Vec4 prev_col = random_col();
@@ -61,7 +62,8 @@ void tick(GameState *gameState) {
             stack_push(gameState->stack, cur_pos);
             stack_push(gameState->stack, new_pos);
 
-            gameState->color_array[(int)new_pos.x + (int)new_pos.y * gameState->screen_width] = generate_col(gameState->color_array[(int)(cur_pos.x) + (int)(cur_pos.y) * gameState->screen_width]);
+            Vec4 generated_col = generate_col(gameState->color_array[(int)(cur_pos.x) + (int)(cur_pos.y) * gameState->screen_width], COL_MOD_MIN, COL_MOD_MAX);
+            gameState->color_array[(int)new_pos.x + (int)new_pos.y * gameState->screen_width] = generated_col;
             break;
         }
     }

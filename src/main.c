@@ -1,14 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <time.h>
 #include <SDL2/SDL.h>
-#include "program.h"
 #include "game_state.h"
-#include "handle_sdl.h"
-#include "random.h"
-#include "vector.h"
-#include "color.h"
-#include "stack_vec2.h"
+#include "program.h"
 
 #define WINDOW_PIXEL_WIDTH 1920
 #define WINDOW_PIXEL_HEIGHT 1080
