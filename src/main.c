@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include <SDL2/SDL.h>
-#include "program.h"
 
-#define WINDOW_PIXEL_WIDTH 1920
-#define WINDOW_PIXEL_HEIGHT 1080
+#include "program.h"
 
 bool should_quit(void) {
     SDL_Event event;
@@ -35,6 +35,8 @@ int main(void) {
 
         render();
     }
+
+    save_image();
 
     quit_program();
 }

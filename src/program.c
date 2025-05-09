@@ -1,6 +1,8 @@
 #include "program.h"
 
 #include <time.h>
+#include <linux/limits.h>
+#include <string.h>
 #include <SDL2/SDL.h>
 #include "random.h"
 #include "color.h"
@@ -94,4 +96,36 @@ void render(void) {
 
     SDL_RenderPresent(globals->renderer);
 
+}
+
+
+void save_image(void) {
+    #define IMAGE_PATH "image.ppm"
+    
+    char *exe_path = SDL_GetBasePath();
+    if (!exe_path) {
+        fprintf(stderr, "[WARNING]: Couldn't get base path.\n");
+        quit_program();
+    }
+    
+    char picture_path[PATH_MAX];
+    snprintf(picture_path, sizeof(picture_path), "%s%s", exe_path, IMAGE_PATH);
+    SDL_free(exe_path);
+    
+    FILE *fp = fopen(picture_path, "wb");  // "wb" for binary PPM
+    if (!fp) {
+        fprintf(stderr, "[WARNING]: Couldn't open file to save the image.\n");
+        quit_program();
+    }
+    
+    Globals *globals = get_globals();
+    fprintf(fp, "P6\n%d %d\n255\n", globals->screen_width, globals->screen_height);
+    
+    for (int i = 0; i < globals->screen_width * globals->screen_height; i++) {
+        fputc((unsigned char)(globals->color_array[i].r * 255), fp);
+        fputc((unsigned char)(globals->color_array[i].g * 255), fp);
+        fputc((unsigned char)(globals->color_array[i].b * 255), fp);
+    }
+    
+    fclose(fp);
 }

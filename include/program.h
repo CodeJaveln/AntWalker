@@ -14,4 +14,6 @@ void tick(void);
 
 void render(void);
 
+void save_image(void);
+
 #endif

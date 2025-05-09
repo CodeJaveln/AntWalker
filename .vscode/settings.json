@@ -6,7 +6,9 @@
         "random": "c",
         "limits": "c",
         "algorithm": "c",
-        "sdl.h": "c"
+        "sdl.h": "c",
+        "stdlib.h": "c",
+        "limits.h": "c"
     },
     "makefile.configureOnOpen": false
 }
