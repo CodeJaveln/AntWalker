@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
-#include "game_state.h"
 #include "program.h"
 
 #define WINDOW_PIXEL_WIDTH 1920
@@ -26,20 +25,16 @@ bool should_quit(void) {
 }
 
 int main(void) {
-    GameState *gameState = malloc(sizeof(GameState));
-    gameState->screen_width = WINDOW_PIXEL_WIDTH;
-    gameState->screen_height = WINDOW_PIXEL_HEIGHT;
-    
-    if (!init_program(gameState)) {
-        quit_program(gameState);
+    if (!init_program()) {
+        quit_program();
         return 1;
     }
 
     while (!should_quit()) {
-        tick(gameState);
+        tick();
 
-        render(gameState);
+        render();
     }
 
-    quit_program(gameState);
+    quit_program();
 }

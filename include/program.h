@@ -2,14 +2,16 @@
 #define PROGRAM_H
 
 #include <stdbool.h>
-#include "game_state.h"
+#include "globals.h"
 
-bool init_program(GameState *gameState);
+Globals *get_globals(void);
 
-void quit_program(GameState *gameState);
+bool init_program(void);
 
-void tick(GameState *gameState);
+void quit_program(void);
 
-void render(GameState *gameState);
+void tick(void);
+
+void render(void);
 
 #endif

@@ -5,7 +5,8 @@
         "game_state.h": "c",
         "random": "c",
         "limits": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "sdl.h": "c"
     },
     "makefile.configureOnOpen": false
 }

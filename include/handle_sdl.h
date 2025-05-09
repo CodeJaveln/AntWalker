@@ -2,10 +2,10 @@
 #define HANDLE_SDL_H
 
 #include <stdbool.h>
-#include "game_state.h"
+#include <SDL2/SDL.h>
 
-bool init_sdl(GameState *gameState);
+bool init_sdl(SDL_Window **window, SDL_Renderer **renderer);
 
-void quit_sdl(GameState *gameState);
+void quit_sdl(SDL_Window *window, SDL_Renderer *renderer);
 
 #endif
