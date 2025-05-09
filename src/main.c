@@ -10,8 +10,8 @@
 #include "color.h"
 #include "stack_vec2.h"
 
-#define WINDOW_PIXEL_WIDTH 1000
-#define WINDOW_PIXEL_HEIGHT 500
+#define WINDOW_PIXEL_WIDTH 1920
+#define WINDOW_PIXEL_HEIGHT 1080
 
 bool should_quit(void) {
     SDL_Event event;
@@ -44,9 +44,7 @@ int main(void) {
     while (!should_quit()) {
         tick(gameState);
 
-        // if (get_stack_ptr(gameState->stack) < 0) {
         render(gameState);
-        // }
     }
 
     quit_program(gameState);

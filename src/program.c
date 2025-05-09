@@ -68,20 +68,13 @@ void tick(GameState *gameState) {
 }
 
 void render(GameState *gameState) {
-    SDL_SetRenderDrawColor(gameState->renderer, 0, 0, 0, 255);
-    SDL_RenderClear(gameState->renderer);
+    Vec2 draw_pos = stack_pop(gameState->stack);
+    stack_push(gameState->stack, draw_pos);
 
-    for (int y = 0; y < gameState->screen_height; y++) {
-        for (int x = 0; x < gameState->screen_width; x++) {
-            Vec4 vec = gameState->color_array[x + y * gameState->screen_width];
-            if (vec4_is_empty(vec)) {
-                continue;
-            }
-            SDL_Color col = vec4_to_col(vec);
-            SDL_SetRenderDrawColor(gameState->renderer, col.r, col.g, col.b, col.a);
-            SDL_RenderDrawPointF(gameState->renderer, x, y);
-        }
-    }
+    SDL_Color draw_col = vec4_to_col(gameState->color_array[(int)draw_pos.x + (int)draw_pos.y * gameState->screen_width]);
+    SDL_SetRenderDrawColor(gameState->renderer, draw_col.r, draw_col.g, draw_col.b, draw_col.a);
+    SDL_RenderDrawPointF(gameState->renderer, draw_pos.x, draw_pos.y);
 
     SDL_RenderPresent(gameState->renderer);
+
 }

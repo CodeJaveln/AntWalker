@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "stack_vec2.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "game_state.h": "c"
     },
     "makefile.configureOnOpen": false
 }
