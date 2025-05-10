@@ -8,7 +8,9 @@
         "algorithm": "c",
         "sdl.h": "c",
         "stdlib.h": "c",
-        "limits.h": "c"
+        "limits.h": "c",
+        "handle_sdl.h": "c",
+        "program.h": "c"
     },
     "makefile.configureOnOpen": false
 }

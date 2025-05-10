@@ -58,6 +58,10 @@ void stack_push(StackVec2 *stack, Vec2 vec) {
     stack->vec_arr[stack->stack_ptr] = vec;
 }
 
+Vec2 stack_peep(StackVec2 *stack) {
+    return stack->vec_arr[stack->stack_ptr];
+}
+
 StackVec2 *stack_create(int capacity) {
     if (capacity < 0) {
         fprintf(stderr, "[WARNING]: Passed invalid capacity to stack_create.");

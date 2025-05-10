@@ -11,6 +11,8 @@ Vec2 stack_pop(StackVec2 *stack);
 
 void stack_push(StackVec2 *stack, Vec2 vec);
 
+Vec2 stack_peep(StackVec2 *stack);
+
 StackVec2 *stack_create(int capacity);
 
 void stack_delete(StackVec2 *stack);

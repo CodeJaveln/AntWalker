@@ -18,7 +18,7 @@ After every move, the new position gets a random color as `Vec4` based on the pr
 - Exit the program when no legal moves exists.
 
 ## Needed tools
-- [X] `GameState`
+- [X] `Globals`
 - [X] `Vec2`
 - [X] `Vec4`
 - [X] `Vec4` to `SDL_Color` (vec4_to_color)
@@ -26,8 +26,8 @@ After every move, the new position gets a random color as `Vec4` based on the pr
 - [X] Random helper
 - [X] Math helper
 
-### GameState
-A struct that holds all perpetual information.
+### Globals
+A struct that holds all perpetual information. Now singleton with program.h
 
 ### Vec2
 Normal Vector2 with x and y floats.

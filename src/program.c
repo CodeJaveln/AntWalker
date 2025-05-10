@@ -1,7 +1,17 @@
 #include "program.h"
 
 #include <time.h>
-#include <linux/limits.h>
+
+#ifdef __linux__
+    #include <linux/limits.h>
+#elif defined(__MINGW32__)
+    #include <limits.h>
+#else
+    #error "Unsupported platform"
+#endif
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <SDL2/SDL.h>
 #include "random.h"
@@ -86,16 +96,20 @@ void tick(void) {
     }
 }
 
+static unsigned char frame = 0;
+
 void render(void) {
-    Vec2 draw_pos = stack_pop(globals->stack);
-    stack_push(globals->stack, draw_pos);
+    frame++;
+    Vec2 draw_pos = stack_peep(globals->stack);
 
     SDL_Color draw_col = vec4_to_col(globals->color_array[(int)draw_pos.x + (int)draw_pos.y * globals->screen_width]);
     SDL_SetRenderDrawColor(globals->renderer, draw_col.r, draw_col.g, draw_col.b, draw_col.a);
     SDL_RenderDrawPointF(globals->renderer, draw_pos.x, draw_pos.y);
 
-    SDL_RenderPresent(globals->renderer);
-
+    // When frame overfows
+    if (frame == 0) {
+        SDL_RenderPresent(globals->renderer);
+    }
 }
 
 
@@ -128,4 +142,22 @@ void save_image(void) {
     }
     
     fclose(fp);
+}
+
+bool should_quit(void) {
+    SDL_Event event;
+    while (SDL_PollEvent(&event)) {
+        switch (event.type) {
+            case SDL_QUIT: {
+                return true;
+            }
+            case SDL_KEYDOWN: {
+                if (event.key.keysym.sym == SDLK_ESCAPE) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false;   
 }

@@ -16,4 +16,6 @@ void render(void);
 
 void save_image(void);
 
+bool should_quit(void);
+
 #endif
