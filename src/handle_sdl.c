@@ -12,7 +12,7 @@ bool init_sdl(SDL_Window **window, SDL_Renderer **renderer) {
         return false;
     }
     
-    *window = SDL_CreateWindow("Ant Walker", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, get_globals()->screen_width, get_globals()->screen_height, SDL_WINDOW_BORDERLESS | SDL_WINDOW_ALWAYS_ON_TOP);
+    *window = SDL_CreateWindow("Ant Walker", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, get_globals()->screen_width, get_globals()->screen_height, SDL_WINDOW_BORDERLESS);
     if (*window == NULL) {
         fprintf(stderr, "Couldn't initialize window, SDL_GetError: %s\n", SDL_GetError());
         quit_sdl(*window, *renderer);
