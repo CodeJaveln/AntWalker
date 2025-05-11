@@ -37,11 +37,11 @@ bool init_program(void) {
     globals = malloc(sizeof(Globals));
     globals->screen_width = WINDOW_WIDTH;
     globals->screen_height = WINDOW_HEIGHT;
-    
+
     if (!init_sdl(&globals->window, &globals->renderer)) {
         return false;
     }
-
+    
     globals->color_array = calloc(globals->screen_width * globals->screen_height, sizeof(Vec4));
     if (globals->color_array == NULL) {
         fprintf(stderr, "[ERROR]: color_array couldn't allocate memory.");
