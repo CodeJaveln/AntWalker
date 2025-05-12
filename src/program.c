@@ -4,7 +4,7 @@
 
 #ifdef __linux__
     #include <linux/limits.h>
-#elif defined(__MINGW32__)
+#elif defined(_WIN32)
     #include <limits.h>
 #else
     #error "Unsupported platform"
@@ -96,7 +96,7 @@ void tick(void) {
     }
 }
 
-static unsigned char frame = 0;
+static u_int64_t frame = 0;
 
 void render(void) {
     frame++;
@@ -107,7 +107,7 @@ void render(void) {
     SDL_RenderDrawPointF(globals->renderer, draw_pos.x, draw_pos.y);
 
     // When frame overfows
-    if (frame == 0) {
+    if (frame % 0x200 == 0) {
         SDL_RenderPresent(globals->renderer);
     }
 }
