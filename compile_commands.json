@@ -1,0 +1,242 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Iinclude",
+      "-Wall",
+      "-Werror",
+      "-std=c99",
+      "-o",
+      "./bin/game",
+      "./src/color.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/color.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Iinclude",
+      "-Wall",
+      "-Werror",
+      "-std=c99",
+      "-o",
+      "./bin/game",
+      "./src/handle_sdl.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/handle_sdl.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Iinclude",
+      "-Wall",
+      "-Werror",
+      "-std=c99",
+      "-o",
+      "./bin/game",
+      "./src/main.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/main.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Iinclude",
+      "-Wall",
+      "-Werror",
+      "-std=c99",
+      "-o",
+      "./bin/game",
+      "./src/math_helper.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/math_helper.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Iinclude",
+      "-Wall",
+      "-Werror",
+      "-std=c99",
+      "-o",
+      "./bin/game",
+      "./src/program.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/program.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Iinclude",
+      "-Wall",
+      "-Werror",
+      "-std=c99",
+      "-o",
+      "./bin/game",
+      "./src/random.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/random.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Iinclude",
+      "-Wall",
+      "-Werror",
+      "-std=c99",
+      "-o",
+      "./bin/game",
+      "./src/stack_vec2.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/stack_vec2.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Iinclude",
+      "-Wall",
+      "-Werror",
+      "-std=c99",
+      "-o",
+      "./bin/game",
+      "./src/vector.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/vector.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game"
+  },
+  {
+    "arguments": [
+      "/usr/bin/i686-w64-mingw32-gcc",
+      "-c",
+      "-I./include",
+      "-I./cross_include",
+      "-o",
+      "bin/game.exe",
+      "src/color.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/color.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/i686-w64-mingw32-gcc",
+      "-c",
+      "-I./include",
+      "-I./cross_include",
+      "-o",
+      "bin/game.exe",
+      "src/handle_sdl.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/handle_sdl.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/i686-w64-mingw32-gcc",
+      "-c",
+      "-I./include",
+      "-I./cross_include",
+      "-o",
+      "bin/game.exe",
+      "src/main.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/main.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/i686-w64-mingw32-gcc",
+      "-c",
+      "-I./include",
+      "-I./cross_include",
+      "-o",
+      "bin/game.exe",
+      "src/math_helper.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/math_helper.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/i686-w64-mingw32-gcc",
+      "-c",
+      "-I./include",
+      "-I./cross_include",
+      "-o",
+      "bin/game.exe",
+      "src/program.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/program.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/i686-w64-mingw32-gcc",
+      "-c",
+      "-I./include",
+      "-I./cross_include",
+      "-o",
+      "bin/game.exe",
+      "src/random.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/random.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/i686-w64-mingw32-gcc",
+      "-c",
+      "-I./include",
+      "-I./cross_include",
+      "-o",
+      "bin/game.exe",
+      "src/stack_vec2.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/stack_vec2.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/i686-w64-mingw32-gcc",
+      "-c",
+      "-I./include",
+      "-I./cross_include",
+      "-o",
+      "bin/game.exe",
+      "src/vector.c"
+    ],
+    "directory": "/home/codejaveln/Desktop/repos/C/AntWalker",
+    "file": "/home/codejaveln/Desktop/repos/C/AntWalker/src/vector.c",
+    "output": "/home/codejaveln/Desktop/repos/C/AntWalker/bin/game.exe"
+  }
+]
