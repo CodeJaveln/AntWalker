@@ -19,8 +19,8 @@
 #include "handle_sdl.h"
 #include "globals.h"
 
-#define COL_MOD_MIN -0.005f
-#define COL_MOD_MAX 0.005f
+#define COL_MOD_MIN -0.001f
+#define COL_MOD_MAX 0.001f
 
 #define WINDOW_WIDTH 1920
 #define WINDOW_HEIGHT 1080
@@ -70,6 +70,8 @@ void quit_program(void) {
     free(globals);
 }
 
+static __int32_t frame = 0;
+
 void tick(void) {
     while (get_stack_ptr(globals->stack) >= 0) {
         Vec2 cur_pos = stack_pop(globals->stack);
@@ -85,7 +87,14 @@ void tick(void) {
         }
 
         if (legal_moves > 0) {
-            Vec2 new_pos = moves_arr[rand_uniform(0, legal_moves - 1)];
+            Vec2 new_pos;
+            if (legal_moves == 1) {
+                new_pos = moves_arr[legal_moves - 1];
+            }
+            else {
+                new_pos = moves_arr[rand_uniform(0, legal_moves - 1)];
+            }
+
             stack_push(globals->stack, cur_pos);
             stack_push(globals->stack, new_pos);
 
@@ -94,9 +103,24 @@ void tick(void) {
             break;
         }
     }
-}
 
-static u_int64_t frame = 0;
+    if (get_stack_ptr(globals->stack) < 0) {
+        for (int i = 0; i < WINDOW_WIDTH * WINDOW_HEIGHT; i++) {
+            globals->color_array[i] = (Vec4){ .r = 0, .g = 0, .b = 0, .a = 0 };
+        }
+
+        Vec2 pos = { globals->screen_width / 2, globals->screen_height / 2 };
+        stack_push(globals->stack, pos);
+    
+        Vec4 prev_col = random_col();
+        globals->color_array[(int)pos.x + (int)pos.y * globals->screen_width] = prev_col;
+
+        SDL_SetRenderDrawColor(globals->renderer, 0, 0, 0, 255);
+        SDL_RenderClear(globals->renderer);
+        SDL_RenderPresent(globals->renderer);
+        frame = 0;
+    }
+}
 
 void render(void) {
     frame++;
@@ -106,8 +130,7 @@ void render(void) {
     SDL_SetRenderDrawColor(globals->renderer, draw_col.r, draw_col.g, draw_col.b, draw_col.a);
     SDL_RenderDrawPointF(globals->renderer, draw_pos.x, draw_pos.y);
 
-    // When frame overfows
-    if (frame % 0x200 == 0) {
+    if (frame % 1024 == 0) {
         SDL_RenderPresent(globals->renderer);
     }
 }
